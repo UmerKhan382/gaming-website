@@ -1,0 +1,949 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: sans-serif;
+    background: #191a1f;
+}
+body::-webkit-scrollbar {
+    display: none;
+}
+
+/* header section and navbar */
+
+.header {
+    position: relative;
+    height: 100vh;
+    background-image: url(witcher_3_wolf-wallpaper-1920x1080.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+/* navbar section */
+
+.container {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 10;
+}
+
+.navbar {
+    position: sticky;
+    top: 0;
+    width: 100%;
+    height: 80px;
+    margin: auto;
+    box-shadow: 0 10px 35px;
+}
+
+nav .icon {
+    display: inline-block;
+    color: #AF0404;
+    font-size: 30px;
+    margin-left: 30px;
+}
+
+.logo {
+    text-decoration: none;
+    color: white;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    font-size: 40px;
+    font-weight: 600;
+    line-height: 80px;
+}
+
+.logo span {
+    color: #AF0404;
+}
+
+.label {
+    float: right; 
+    display: none; 
+    margin-top: 23px;
+    margin-right: 15px;
+    cursor: pointer;
+}
+
+.burger {
+    width: 35px;
+    height: 5px;
+    background-color: white;
+    margin-top: 5px;
+}
+
+#check {
+    display: none;
+}
+
+nav ul {
+    float: right;
+    display: inline;
+    list-style-type: none;
+    line-height: 20px;
+    margin-top: 30px;
+}
+
+nav ul li {
+    display: inline-block;
+    margin-right: 30px;
+}
+
+nav ul li a {
+    position: relative;
+    text-decoration: none;
+    color: white;
+    padding: 10px;
+    font-size: 20px;
+    font-weight: 500;
+    transition: .3s;
+}
+
+nav ul li a::after {
+    content: '';
+    display: block;
+    height: 2px;
+    background-color: #AF0404;
+    position: absolute;
+    left: 0;
+    right: 0;
+    transform-origin: right;
+    transform: scale(0, 1);
+    transition: transform ease-in-out 0.5s;
+}
+
+nav ul li a.active{
+    background: #AF0404;
+}
+
+nav ul li a:hover::after {
+    transform: scale(1, 1);
+}
+
+.banner {
+    position: absolute;
+    top: 250px;
+    right: 70px;
+    width: 40%;
+    color: white;
+}
+.banner h1 span {
+    color: #da0909;
+}
+.banner h1 {
+    letter-spacing: 1px;
+    font-size: 45px;
+}
+.banner h2 {
+    font-style: italic;
+    letter-spacing: 2px;
+    font-weight: 400;
+}
+.banner .buttons {
+    margin: 35px 0;
+}
+.button {
+    display: inline-block;
+    background: #AF0404;
+    margin-right: 20px;
+    color: white;
+    padding: 20px;
+    border: 1px solid #AF0404;
+    transform: skew(350deg);
+}
+.banner .buttons .button a {
+    text-decoration: none;
+    color: white;
+    margin-left: 10px;
+    letter-spacing: 1px;
+}
+.banner .buttons .button:hover {
+    filter: brightness(110%);
+    cursor: pointer;
+}
+.banner .button:nth-child(2) {
+    background: transparent;
+}
+.banner .button:nth-child(2):hover{
+    background: #AF0404;
+    transition: background 250ms linear;
+}
+
+/* features section */
+
+.features {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 30px auto;
+}
+/*
+.features::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 100px;
+    background: linear-gradient(to top, #191a1f, transparent);
+    z-index: 1000;
+}*/
+
+.feature-block {
+    position: relative;
+    margin: 20px;
+    padding: 20px;
+    background: #221d1d;
+    color: white;
+    width: 300px;
+    height: 200px;
+    text-align: center;
+    transform: skew(350deg);
+}
+
+.feature-block:hover {
+    filter: brightness(110%);
+}
+
+.feature-block p {
+    font-size: 15px;
+    margin: 5px;
+    letter-spacing: 2px;
+}
+
+.feature-block .icon {
+    font-size: 50px;
+    color: #AF0404;
+}
+
+/* collection section and cards */
+
+.collection-header {
+    text-align: center;
+    font-size: 40px;
+    color: white;
+}
+
+.collection {
+    background: transparent;
+    width: 100%;
+    min-height: auto;
+    margin-top: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    row-gap: 0;
+}
+.collection-card {
+    margin-bottom: 90px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 25%;
+}
+/*----card section----*/
+.card h1, h2, h3, p {
+    margin: 0;
+}
+
+.card img {
+    width: 100%;
+}
+
+.card {
+    cursor: pointer;
+    position: relative;
+    width: 12.5em;
+    color: white;
+}
+
+.streamers {
+    display: flex;
+    text-align: center;
+}
+.streamers img {
+    width: 1.5em;
+    height: 1.5em;
+    border-radius: 50%;
+    border: 1px solid black;
+}
+
+.rank{
+   position: absolute; 
+   top: 0;
+   right: 1em;
+   z-index: 9;
+   background-color: rgb(22, 21, 21, .8);
+   padding: .5em .5em .75em;
+   clip-path: polygon(100% 0%, 100% 100%, 50% 77%, 0 100%, 0 0);
+   transition: transform 150ms;
+}
+.card:hover .rank {
+    transform: translate(150%, -73%);
+}
+
+.front {
+    transition: transform 200ms;
+}
+
+.front .game-img {
+    height: 250px;
+    border-radius: .5em;
+}
+
+.front .game-name{ 
+    margin: .55em 0;
+}
+
+.front .stats {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.front .stats .streamers img:nth-of-type(1) {
+    transform: translateX(70%);
+
+}
+.front .stats .streamers img:nth-of-type(2) {
+    transform: translateX(40%);   
+}
+.card:hover .front {
+    transform: translateY(-30%) scale(.8);
+}
+
+.card:hover .front .stats {
+    opacity: 0;
+}
+.card:hover .front .game-name {
+    animation: gamename 200ms forwards;
+}
+
+.card .likes {
+    display: flex;
+}
+.likes::before {
+    content: "\f004";
+    display: inline-block;
+    color: red;
+    font-family: "Font Awesome 5 Free"; 
+    font-weight: 300; 
+    font-size: 1em;
+    font-style: normal;
+    font-variant: normal;
+    margin-right: 0.5em;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+}
+
+
+.back {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5em;
+    opacity: 0;
+    position: absolute;
+    top: 53%;
+    left: 0;
+    right: 0;
+    transform: translateY(30%);
+}
+.back .game-info {
+    margin: 1em 0;
+    columns: 2;
+    column-rule: 1px solid rgba(255, 255, 255, 0.2);
+}
+.back .game-info .game-stats {
+    font-size: 1.125rem;
+    text-align: center;
+}
+.back .game-info .game-stats span {
+    display: block;
+    font-size: .8rem;
+}
+.back .btn {
+    cursor: pointer;
+    color: white;
+    background-color: #da0909;
+    border: 0;
+    font-weight: bold;
+    letter-spacing: 2px;
+    padding: .5em 3.5em;
+    border-radius: 100vw;
+}
+.back .btn:hover {
+    color: red;
+    background: transparent;
+    box-shadow: 2px 2px 10px #ff0000;
+    transition: box-shadow 250ms linear;
+}
+
+.back .streamers {
+    width: 100%;
+    justify-content: space-between;
+    font-size: .8em;
+}
+
+.back .streamers .name {
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+.back .streamers .streamer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.back .streamers .streamer .number {
+    font-weight: 100;
+}
+.back .streamers .streamer img{
+    width: 2.5em;
+    height: 2.5em;
+}
+
+.gamer-icon {
+    position: relative;
+    width: 2.5em;
+    height: 2.5em;
+    transition: transform 100ms ease-in-out;
+}
+.gamer-icon::after,
+.gamer-icon::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    border-radius: 50%;
+    opacity: 0;
+}
+.gamer-icon::before {
+    content: "\f04b";
+    background-color: red;
+    display: grid;
+    place-items: center;
+    font-family: "Font Awesome 5 Free"; 
+    font-weight: 600; 
+    font-size: 0.7em;
+    font-style: normal;
+    font-variant: normal;
+    text-rendering: auto;
+    z-index: 10;
+    transition: opacity 70ms linear, background-color 100ms linear;
+    -webkit-font-smoothing: antialiased;
+}
+.gamer-icon:hover::before {
+    background-color: rgb(201, 8, 8);
+}
+.gamer-icon:hover::after {
+    background-color: red;
+    content: "";
+    animation: pulse 1200ms infinite;
+    z-index: 1;
+}
+
+.card:hover .back {
+    opacity: 1;
+    transform: translateY(0);
+    transition: transform 250ms ease, opacity 150ms linear;
+}
+.back .streamer:hover .gamer-icon{
+    transform: translateY(-20%);
+}
+.back .streamer:hover .gamer-icon::before {
+    opacity: 1;
+}
+.back .streamer .gamer-icon:hover {
+    transform: translateY(-20%) scale(1.15);
+}
+
+.background {
+    background: rgb(34, 32, 32);
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    opacity: 0;
+    transform: scale(.2, .9);
+    border-radius: .5em;;
+    overflow: hidden;
+    z-index: -1;
+}
+.card:hover .background{
+    opacity: 1;
+    transform: scale(1.35, 1.3) translateY(5%);
+    transition: transform 250ms  cubic-bezier(.21, 1.06, .81, 1.01), opacity 100ms linear;
+}
+.background img {
+    opacity: .3;
+    clip-path: url(#wave);
+    width: 100%;
+    height: 20%;
+    object-fit: cover;
+    object-position: top;
+}
+
+
+@keyframes gamename {
+    0% {
+        text-align: left;
+        opacity: 1;
+    }
+    25% {
+        text-align: left;
+        opacity: 0;
+    }
+    50% {
+        text-align: center;
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    100% {
+        text-align: center;
+        opacity: 1;
+        transform: scale(0.9);
+    }
+}
+@keyframes pulse{
+    0% {
+        transform: scale(0.95);
+        opacity: 0.75;
+    }
+    100% {
+        transform: scale(1.35);
+        opacity: 0;
+    }
+}
+
+
+
+/* mid section services query and purchase */
+
+.mid-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: auto;
+    width: 100%;
+    background: url(UFqmAf.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: top;
+    background-attachment: fixed;
+}
+
+/* services*/
+
+.services {
+    height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    overflow: hidden;
+}
+
+.service-block{
+    position: relative;
+    width: 300px;
+    height: 150px;
+    color: white;    
+    text-align: center;
+    margin: 20px;
+    padding: 20px;
+    background-color: rgba(34, 29, 29, 0.6);
+    transform: skew(350deg);
+}
+
+.service-block:hover {
+    transition: .04s;
+    filter: brightness(115%);
+}
+
+.service-block p{
+    font-size: 15px;
+    margin: 5px;
+    letter-spacing: 2px;
+    line-height: 25px;
+}
+
+.service-block .service-icon {
+    font-size: 40px;
+    color: #AF0404;
+}
+
+/* query section */
+
+.query {
+    width: 100%;
+    height: 350px;
+    background: #191a1f;
+    padding: 50px;
+    color: white;
+}
+
+.query h2 {
+    margin-top: 25px;
+    font-size: 35px;
+    font-weight: 400;
+}
+
+.query p {
+    font-size: 17px;
+    letter-spacing: 2px;
+    line-height: 50px;
+    font-style: italic;
+}
+
+.query a {
+    color: white;
+}
+
+/* purchase section */
+
+.purchase{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 90vh;
+    background: url(wallpaper-mania.com_High_resolution_wallpaper_background_ID_77700921235.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+.purchase h2 {
+    color: white;
+    margin-bottom: 30px;
+    font-size: 40px;
+    font-weight: 400;
+    letter-spacing: 2px;
+}
+
+.purchase-box{
+    transform: skew(350deg);
+}
+
+.purchase-box a {
+    color: white;
+    width: 200px;
+    padding: 10px;
+    text-decoration: none;
+    border: 2px solid white;
+    font-size: 25px;
+    text-align: center;
+}
+
+.purchase-box a:hover {
+    transition: 0.5s;
+    background: #AF0404;
+    border: none;
+}
+
+/* footer section social and copyright */
+
+.footer {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 80vh;
+    margin-top: 10px;
+    color: white;
+    background: url(angry_dragon.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: top;
+    background-attachment: fixed;
+}
+
+.footer h2 {
+    margin-top: 30px;
+    font-size: 40px;
+    letter-spacing: 2px;
+    font-weight: 400;
+}
+
+/* social section */
+
+.social {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.social-block {
+    width: 150px;
+    height: 140px;
+    text-align: center;
+    margin: 25px;
+    letter-spacing: 1px;
+    font-size: 14px;
+    transform: skew(350deg);
+}
+
+.social a {
+    color: white;
+    text-decoration: none;
+}
+
+.social .social-icon {
+    font-size: 50px;
+    padding: 40px 60px;
+    background: rgba(34, 29, 29, 0.5);
+}
+
+/* copyright section */
+
+.copyright {
+    position: absolute;
+    width: 100%;
+    height: 100px;
+    text-align: center;
+    background: rgba(34, 29, 29, 0.7);
+    bottom: 0;
+    padding: 40px;
+}
+
+@media (max-width: 952px){
+    .logo {
+        font-size: 30px;
+    }
+
+    nav ul li a{
+        font-size: 17px;
+        text-shadow: 2px 2px 7px black;
+    }
+
+    .feature-block {
+        width: 230px;
+        height: 200px;
+    }
+
+    .collection-header {
+        font-size: 30px;
+    }
+
+    .collection-card {
+        margin-bottom: 90px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 33%;
+    }
+
+    .services {
+        height: 90vh;
+        flex-direction: column;
+        margin: 20px auto;
+        overflow: hidden;
+    }
+
+    .service-block{
+        width: 80%;
+        height: 150px;
+        margin: 20px;
+        padding: 8px;
+    }
+
+    .service-block .service-icon {
+        font-size: 35px;
+    }
+
+    .query {
+        width: 100%;
+        height: 280px;
+        background: #191a1f;
+        padding: 40px;
+        color: white;
+    }
+
+    .query h2 {
+        margin-top: 7px;
+        font-size: 30px;
+    }
+
+    .social-block {
+        width: 100px;
+        height: 120px;
+        text-align: center;
+        margin: 25px;
+        letter-spacing: 1px;
+        font-size: 14px;
+    }
+    
+    .social .social-icon {
+        font-size: 30px;
+        padding: 30px 50px;
+        background: rgba(34, 29, 29, 0.5);
+    }
+
+    .footer h2 {
+        margin-top: 0px;
+        font-size: 30px;
+        letter-spacing: 2px;
+        font-weight: 400;
+    }
+
+    .copyright {
+        height: 80px;
+        padding: 30px;
+        font-size: 13px;
+    }
+    
+}
+
+@media (max-width: 858px){
+    .header {
+        background-size: cover;
+        background-position: left;
+    }
+    
+    .label {
+        display: block;
+    }
+
+    nav ul {
+       position: fixed;  
+       width: 100%;
+       height: 50vh;
+       top: -500px;
+       left: 0;
+       background-color: rgba(0, 0, 0, 0.5);
+       backdrop-filter: blur(5px);
+       text-align: center;
+       transition: all ease-in 0.3s;
+    }
+
+    nav ul li {
+        display: block;
+        margin-top: 30px;
+    }
+
+    nav ul li a {
+        font-size: 20px;
+        padding: 7;
+        font-weight: 600;
+
+    }
+
+    nav ul li a.active{
+        background: none;
+    }
+
+    #check:checked ~ ul {
+        top: 40px;
+    }
+
+    #check:checked ~ header {
+        filter: blur(8px);
+    }
+
+    .banner {
+        padding: 20px;
+        width: 100%;
+        right: 0;
+    }
+    .banner h1 {
+        font-size: 35px;
+    }
+    .banner h2 {
+        font-size: 20px;
+        letter-spacing: 1.5px;
+    }
+    .button {
+        padding: 17px;
+    }
+
+    .collection-header {
+        font-size: 20px;
+    }
+
+    .features {
+        flex-direction: column;
+        justify-content: space-around;
+    }
+
+    .feature-block {
+        width: 80%;
+        margin: 20px;
+    }
+
+    .collection-card {
+        margin-bottom: 90px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 50%;
+    }
+
+    .query {
+        height: 200px;
+        padding-top: 40px;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+    
+    .query h2 {
+        margin-top: 0;
+        font-size: 20px;
+        font-weight: 600;
+    }
+    
+    .query p {
+        font-size: 14px;
+        letter-spacing: 1px;
+        line-height: 30px;
+        font-style: italic;
+    }
+
+    .purchase h2 {
+        font-size: 25px;
+        font-weight: 700;
+    }
+
+    .footer h2 {
+        font-size: 25px;
+        letter-spacing: 2px;
+        font-weight: 400;
+    }
+    
+    .social-block {
+        width: 25px;
+        height: 120px;
+        text-align: center;
+        margin: 35px;
+        letter-spacing: 0;
+        font-size: 10px;
+    }
+
+    .social .social-icon {
+        font-size: 20px;
+        padding: 20px 30px;
+    }
+
+    .social a {
+        text-align: center;
+    }
+
+    .copyright {
+        height: 70px;
+        padding: 30px;
+        font-size: 12px;
+    } 
+}
